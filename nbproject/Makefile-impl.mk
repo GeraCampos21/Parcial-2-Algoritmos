@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Parcial2
+PROJECTNAME=Parcial-2-Algoritmos
 
 # Active Configuration
 DEFAULTCONF=Debug

@@ -20,7 +20,6 @@
 
 
 
-
 int main(int argc, char** argv) {
     printf("Examen parcial de %s \n",get_carnet());
     glutInit(&argc, argv);

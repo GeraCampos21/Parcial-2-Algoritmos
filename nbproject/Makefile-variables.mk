@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=parcial2
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/parcial2
+CND_ARTIFACT_NAME_Debug=parcial-2-algoritmos
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/parcial-2-algoritmos
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=parcial2.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/parcial2.tar
+CND_PACKAGE_NAME_Debug=parcial-2-algoritmos.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/parcial-2-algoritmos.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=parcial2
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/parcial2
+CND_ARTIFACT_NAME_Release=parcial-2-algoritmos
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/parcial-2-algoritmos
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=parcial2.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/parcial2.tar
+CND_PACKAGE_NAME_Release=parcial-2-algoritmos.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/parcial-2-algoritmos.tar
 #
 # include compiler specific variables
 #
