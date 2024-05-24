@@ -30,7 +30,8 @@ typedef struct {
 int numVertices = 4;
 
 // Vértices del polígono
-Point vertices[] = {{50, 50}, {300, 50}, {300, 300}, {50, 300}};
+                     //h           //i        //f           //g
+Point vertices[] = {{450, 231}, {450, 394}, {630, 394}, {630, 231}};
 
 // Función para dibujar un píxel
 void setPixel(int x, int y) {
@@ -100,6 +101,7 @@ void scanLineFill(Point *vertices, int numVertices) {
 }
 
 // Función de visualización
+/*
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(0.0, 0.0, 0.0); // Negro para el contorno del polígono
@@ -108,50 +110,71 @@ void display() {
     glColor3f(1.0, 0.0, 0.0); // Rojo para el relleno del polígono
     scanLineFill(vertices, numVertices);
 }
+*/
 
 // Función de inicialización
 void init() {
     glClearColor(1.0, 1.0, 1.0, 1.0); // Fondo blanco
     glColor3f(0.0, 0.0, 0.0); // Color inicial de los puntos (negro)
-    glPointSize(1.0); // Tamaño de los puntos
+    glPointSize(3.0); // Tamaño de los puntos
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluOrtho2D(0.0, WIDTH, 0.0, HEIGHT);
 }
 
+void EcuacionG(int size, float x1, float y1, float x2, float y2) {
 
+    if (x1 == x2) {
+        int startY = (y1 < y2) ? y1 : y2;
+        int endY = (y1 > y2) ? y1 : y2;
+        for (int j = startY; j <= endY; j++) {
+            glPointSize(size);
+            glBegin(GL_POINTS);
+            glVertex2f(x1, j);
+            glEnd();
+        }
+    }
 
+    float m = (y2 - y1) / (x2 - x1);
+    float b = y1 - (m * x1);
 
+    float dx = x2 - x1;
+    float dy = y2 - y1;
+    int steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+    float xIncrement = dx / steps;
+    float yIncrement = dy / steps;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    glPointSize(size);
+    glBegin(GL_POINTS);
+    for (int i = 0; i <= steps; i++) {
+        float x = x1 + i * xIncrement;
+        float y = m * x + b;
+        glVertex2f(x, y);
+    }
+    glEnd();
+}
 
 
 void dibujar_multiusos(){
    glClear(GL_COLOR_BUFFER_BIT);
+   
     glColor3f(0.0, 0.0, 0.0); // Negro para el contorno del polígono
     drawPolygon(vertices, numVertices);
 
-    glColor3f(1.0, 0.0, 0.0); // Rojo para el relleno del polígono
+    glColor3f( 0, 0, 1); // Rojo para el relleno del polígono
     scanLineFill(vertices, numVertices);
+    
+    glColor3f( 1, 0, 0);
+    EcuacionG(10,530,365,530,235);
+    glColor3f( 1, 0, 0);
+    EcuacionG(10,450,320,574,320);
+    glColor3f( 1, 0, 0);
+    EcuacionG(10,574,267,450,267);
+/*
+    Point vertices[] = {{25, 25}, {150, 25}, {150, 150}, {25, 150}};
+    glColor3f(0.0, 0.0, 0.0); // Rojo para el relleno del polígono
+    scanLineFill(vertices, numVertices);
+*/
     glFlush();
        
 }
