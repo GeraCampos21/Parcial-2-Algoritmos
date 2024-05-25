@@ -40,6 +40,7 @@ void setPixel(int x, int y) {
 // Función para dibujar el polígono
 void drawPolygon(Point *vertices, int numVertices) {
     glBegin(GL_LINE_LOOP);
+     glPointSize(10.0); // Tamaño de los puntos
     for (int i = 0; i < numVertices; i++) {
         glVertex2i(vertices[i].x, vertices[i].y);
     }
@@ -131,6 +132,7 @@ void dibujar_multiusos(){
    glClear(GL_COLOR_BUFFER_BIT);
    
     glColor3f(0.0, 0.0, 0.0); // Negro para el contorno del polígono
+   
     drawPolygon(vertices, numVertices);
 
     glColor3f( 0.55, 0.89, 0.96); // Azul para el relleno del polígono
