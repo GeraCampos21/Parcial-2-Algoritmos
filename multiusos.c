@@ -170,7 +170,53 @@ void dibujar_multiusos(){
      glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
      scanLineFill(vertices6, numVertices);
      
+     
+     // Ventanas del pilar
+     //                     f2          g2         h2          i2
+     Point vertices7[] = {{390,328 }, {400,328 }, {400,378 }, {390,378 }};
+     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     scanLineFill(vertices7, numVertices);
+     
+     //
+     Point vertices8[] = {{410,328 }, {420,328 }, {420,378 }, {410,378 }};
+     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     scanLineFill(vertices8, numVertices);
+     
+     //
+     Point vertices9[] = {{430,328 }, {440,328 }, {440,378 }, {430,378 }};
+     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     scanLineFill(vertices9, numVertices);
+     
+     //
+     Point vertices10[] = {{390,320 }, {400,320 }, {400,270 }, {390,270 }};
+     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     scanLineFill(vertices10, numVertices);
+     
+     //
+     Point vertices11[] = {{410,320 }, {420,320 }, {420,270 }, {410,270 }};
+     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     scanLineFill(vertices11, numVertices);
+     
+     //
+     Point vertices12[] = {{430,270 }, {440,270 }, {440,320 }, {430,320 }};
+     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     scanLineFill(vertices12, numVertices);
+     
+     //
+     Point vertices13[] = {{430,264 }, {440,264 }, {440,238 }, {430,238 }};
+     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     scanLineFill(vertices13, numVertices);
     
+     //
+     Point vertices14[] = {{410,264 }, {420,264 }, {420,238 }, {410,238 }};
+     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     scanLineFill(vertices14, numVertices);
+     
+     //
+     Point vertices15[] = {{390,238 }, {400,238 }, {400,264 }, {390,264 }};
+     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     scanLineFill(vertices15, numVertices);
+     
     
     //los pilares derechos
     glColor3f( 1, 0, 0);
