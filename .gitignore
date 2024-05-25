@@ -1,0 +1,21 @@
+# Ignore directories
+libs/
+build/
+dist/
+
+# Ignore OS-specific files
+*.DS_Store
+Thumbs.db
+
+# Ignore compiled files
+*.o
+*.so
+*.dll
+*.exe
+
+# Ignore log files
+*.log
+
+# Ignore backup files
+*.bak
+*.swp
