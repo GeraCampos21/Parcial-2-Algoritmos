@@ -154,6 +154,23 @@ void dibujar_multiusos(){
     scanLineFill(vertices3, numVertices);
     
     
+    // Ventanas de Marroquin
+    //                      r1           s1         t1          u1
+     Point vertices4[] = {{450,369 }, {528,369 }, {528,342 }, {450,342 }};
+     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     scanLineFill(vertices4, numVertices);
+     
+     //                      v1           w1         z1          a2
+     Point vertices5[] = {{450,316}, {528,316 }, {528,290 }, {450,290 }};
+     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     scanLineFill(vertices5, numVertices);
+     
+     //                      b2           c2         d2          e2
+     Point vertices6[] = {{450,265 }, {528,265 }, {528,238 }, {450,238 }};
+     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     scanLineFill(vertices6, numVertices);
+     
+    
     
     //los pilares derechos
     glColor3f( 1, 0, 0);
