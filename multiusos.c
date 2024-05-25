@@ -40,7 +40,6 @@ void setPixel(int x, int y) {
 // Función para dibujar el polígono
 void drawPolygon(Point *vertices, int numVertices) {
     glBegin(GL_LINE_LOOP);
-     glPointSize(10.0); // Tamaño de los puntos
     for (int i = 0; i < numVertices; i++) {
         glVertex2i(vertices[i].x, vertices[i].y);
     }
@@ -131,27 +130,49 @@ void EcuacionG(int size, float x1, float y1, float x2, float y2) {
 void dibujar_multiusos(){
    glClear(GL_COLOR_BUFFER_BIT);
    
-    glColor3f(0.0, 0.0, 0.0); // Negro para el contorno del polígono
-   
-    drawPolygon(vertices, numVertices);
-
+     //borde del edificio
+    //{{450, 231}, {450, 394}, {630, 394}, {630, 231}
+    glColor3f( 0, 0, 1);
+    EcuacionG(5,450, 396,632, 396);
+    EcuacionG(5,634, 396,634, 228);
+    EcuacionG(5,634, 228,450, 228);
+    
+    //relleno del edificio
     glColor3f( 0.55, 0.89, 0.96); // Azul para el relleno del polígono
     scanLineFill(vertices, numVertices);
     
+    Point vertices1[] = {{536, 369}, {576, 369}, {576, 342}, {536, 342}};
+    glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+    scanLineFill(vertices1, numVertices);
+    
+    Point vertices2[] = {{534, 316}, {574, 316}, {574, 290}, {534, 290}};
+    glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+    scanLineFill(vertices2, numVertices);
+    
+    Point vertices3[] = {{534, 265}, {574, 265}, {574, 238}, {534, 238}};
+    glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+    scanLineFill(vertices3, numVertices);
+    
+    
+    
+    //los pilares derechos
     glColor3f( 1, 0, 0);
-    EcuacionG(10,530,365,530,235);
+    EcuacionG(10,530,365,530,233);
     glColor3f( 1, 0, 0);
-    EcuacionG(10,450,320,574,320);
+    EcuacionG(10,453,320,574,320);
     glColor3f( 1, 0, 0);
-    EcuacionG(10,574,267,450,267);
+    EcuacionG(10,574,267,453,267);
+    
+    
+    //edificio en medio
     glColor3f(1,0,0);
-    EcuacionG(10,440,231,384,231);
+    EcuacionG(5,450,228,450,408);
     glColor3f(1,0,0);
-    EcuacionG(10,384,231,384,406);
+    EcuacionG(5,450,408,380,408);
+    glColor3f(3,0,0);
+    EcuacionG(5,380,408,380,228);
     glColor3f(1,0,0);
-    EcuacionG(10,384,406,440,406);
-    glColor3f(1,0,0);
-    EcuacionG(10,440,406,440,231);
+    EcuacionG(5,380,228,450,228);
 /*
     Point vertices[] = {{25, 25}, {150, 25}, {150, 150}, {25, 150}};
     glColor3f(0.0, 0.0, 0.0); // Rojo para el relleno del polígono
