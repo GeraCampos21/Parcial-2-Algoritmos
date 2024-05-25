@@ -161,7 +161,7 @@ void dibujar_multiusos(){
     glColor3f(0.0, 0.0, 0.0); // Negro para el contorno del polígono
     drawPolygon(vertices, numVertices);
 
-    glColor3f( 0, 0, 1); // Rojo para el relleno del polígono
+    glColor3f( 0.55, 0.89, 0.96); // Azul para el relleno del polígono
     scanLineFill(vertices, numVertices);
     
     glColor3f( 1, 0, 0);
@@ -170,6 +170,14 @@ void dibujar_multiusos(){
     EcuacionG(10,450,320,574,320);
     glColor3f( 1, 0, 0);
     EcuacionG(10,574,267,450,267);
+    glColor3f(1,0,0);
+    EcuacionG(10,440,231,384,231);
+    glColor3f(1,0,0);
+    EcuacionG(10,384,231,384,406);
+    glColor3f(1,0,0);
+    EcuacionG(10,384,406,440,406);
+    glColor3f(1,0,0);
+    EcuacionG(10,440,406,440,231);
 /*
     Point vertices[] = {{25, 25}, {150, 25}, {150, 150}, {25, 150}};
     glColor3f(0.0, 0.0, 0.0); // Rojo para el relleno del polígono
@@ -182,5 +190,5 @@ void dibujar_multiusos(){
 
 
 const char* get_carnet(void){
-    return "CC19089 y MA19074";
+    return "CC19089 and MA19074";
 }
