@@ -17,10 +17,6 @@ void inicializar_multiusos(void) {
     gluOrtho2D(0, 700, 0, 700); // 700x700
 }
 
-// Tamaño de la ventana
-#define WIDTH 640
-#define HEIGHT 480
-
 // Estructura para almacenar puntos
 typedef struct {
     int x, y;
@@ -50,7 +46,6 @@ void drawPolygon(Point *vertices, int numVertices) {
     glEnd();
     glFlush();
 }
-
 // Función para rellenar el polígono utilizando Scan-Line Fill
 void scanLineFill(Point *vertices, int numVertices) {
     int i, j, k;
@@ -99,29 +94,6 @@ void scanLineFill(Point *vertices, int numVertices) {
         }
     }
 }
-
-// Función de visualización
-/*
-void display() {
-    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f(0.0, 0.0, 0.0); // Negro para el contorno del polígono
-    drawPolygon(vertices, numVertices);
-
-    glColor3f(1.0, 0.0, 0.0); // Rojo para el relleno del polígono
-    scanLineFill(vertices, numVertices);
-}
-*/
-
-// Función de inicialización
-void init() {
-    glClearColor(1.0, 1.0, 1.0, 1.0); // Fondo blanco
-    glColor3f(0.0, 0.0, 0.0); // Color inicial de los puntos (negro)
-    glPointSize(3.0); // Tamaño de los puntos
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluOrtho2D(0.0, WIDTH, 0.0, HEIGHT);
-}
-
 void EcuacionG(int size, float x1, float y1, float x2, float y2) {
 
     if (x1 == x2) {
