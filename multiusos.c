@@ -142,35 +142,56 @@ void dibujar_multiusos(){
     scanLineFill(vertices, numVertices);
     
     Point vertices1[] = {{536, 369}, {576, 369}, {576, 342}, {536, 342}};
-    glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+    glColor3f( 0.55f, 0.35f, 0.22f); // Azul para el relleno del polígono
     scanLineFill(vertices1, numVertices);
     
     Point vertices2[] = {{534, 316}, {574, 316}, {574, 290}, {534, 290}};
-    glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+    glColor3f( 0.55f, 0.35f, 0.22f); // Azul para el relleno del polígono
     scanLineFill(vertices2, numVertices);
     
     Point vertices3[] = {{534, 265}, {574, 265}, {574, 238}, {534, 238}};
-    glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+    glColor3f( 0.55f, 0.35f, 0.22f); // Azul para el relleno del polígono
     scanLineFill(vertices3, numVertices);
     
     
     // Ventanas de Marroquin
     //                      r1           s1         t1          u1
      Point vertices4[] = {{450,369 }, {528,369 }, {528,342 }, {450,342 }};
-     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     glColor3f( 0.55f, 0.35f, 0.22f); // Azul para el relleno del polígono
      scanLineFill(vertices4, numVertices);
      
      //                      v1           w1         z1          a2
      Point vertices5[] = {{450,316}, {528,316 }, {528,290 }, {450,290 }};
-     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     glColor3f( 0.55f, 0.35f, 0.22f); // Azul para el relleno del polígono
      scanLineFill(vertices5, numVertices);
      
      //                      b2           c2         d2          e2
      Point vertices6[] = {{450,265 }, {528,265 }, {528,238 }, {450,238 }};
-     glColor3f( 0.0, 0.0, 0.0); // Azul para el relleno del polígono
+     glColor3f(0.55f, 0.35f, 0.22f); // Azul para el relleno del polígono
      scanLineFill(vertices6, numVertices);
      
+    //DIBUJANDO LINEAS SOBRE LAS VENTANAS
+     glColor3f(0,0,0);
+    
+    //lineas primera ventana
+    EcuacionG(2,550,369,550,341);
+    EcuacionG(2,565,369,565,341);
+    EcuacionG(2,536,350,576,350);
+    
+    
+    //lineas 2 ventana
+    EcuacionG(2,545,314,545,290);
+    EcuacionG(2,565,314,565,290);
+    EcuacionG(2,535,295,574,295);
      
+     
+     
+     //relleno ventana      S             Q           P           B1
+    Point vertices17[] = {{380,408 }, {380,228 }, {450,228 }, {450,408 }}; //ESTE ES EL RELLENO DE LAS VENTANAS QUE ESTAN DE 6
+    glColor3f( 1.0, 0.0, 0.0); // Azul para el relleno del polígono
+    scanLineFill(vertices17, numVertices);
+     
+  
      // Ventanas del pilar
      //                     f2          g2         h2          i2
      Point vertices7[] = {{390,328 }, {400,328 }, {400,378 }, {390,378 }};
@@ -226,7 +247,6 @@ void dibujar_multiusos(){
     glColor3f( 1, 0, 0);
     EcuacionG(10,574,267,453,267);
     
-    
     //edificio en medio
     glColor3f(1,0,0);
     EcuacionG(5,450,228,450,408);
@@ -236,16 +256,49 @@ void dibujar_multiusos(){
     EcuacionG(5,380,408,380,228);
     glColor3f(1,0,0);
     EcuacionG(5,380,228,450,228);
-/*
-    Point vertices[] = {{25, 25}, {150, 25}, {150, 150}, {25, 150}};
-    glColor3f(0.0, 0.0, 0.0); // Rojo para el relleno del polígono
-    scanLineFill(vertices, numVertices);
-*/
+    
+    //empezando la parte de la puerta
+    
+    //parte de arriba       R3           T3           U3          D4
+    Point vertices16[] = {{340,409 }, {340,380 }, {380,380 }, {380,409 }};
+    glColor3f( 1.0, 0.0, 0.0); // Azul para el relleno del polígono
+    scanLineFill(vertices16, numVertices);
+    
+    //PARTE BLANCA E4 A F4
+    glColor3f(1,1,1);
+    EcuacionG(5,380,376,380,228);
+    
+    //RELLENO BLANCO SUPERIOR  T3         V3           W3          E4
+    Point vertices18[] = {{340,380 }, {340,360 }, {380,360 }, {380,380 }};
+    glColor3f( 1.0, 1.0, 1.0); // Azul para el relleno del polígono
+    scanLineFill(vertices18, numVertices);
+    
+    //RELLENO NEGRO         V3           Z3         A4            W3
+    Point vertices19[] = {{340,360 },  {340,328}, {375,328 }, {375,360 },};
+    glColor3f( 0, 0, 0); // Azul para el relleno del polígono
+    scanLineFill(vertices19, numVertices);
+    
+    //PARTE BLANCA G4 A H4
+    glColor3f(1,1,1);
+    EcuacionG(5,340,323,375,323);
+    
+     //RELLENO NEGRO         I4           B4         C4            J4
+    Point vertices20[] = {{340,318 },  {340,270}, {376,270 }, {375,318 },};
+    glColor3f( 0, 0, 0); // Azul para el relleno del polígono
+    scanLineFill(vertices20, numVertices);
+    
+     //PARTE BLANCA L4 A K4
+    glColor3f(1,1,1);
+    EcuacionG(5,340,266,376,266);
+    
+    //RELLENO NEGRO         M4           O4         P4            N4
+    Point vertices21[] = {{340,264 },  {340,228}, {376,228 }, {376,264 },};
+    glColor3f( 0, 0, 0); // Azul para el relleno del polígono
+    scanLineFill(vertices21, numVertices);
+    
     glFlush();
        
 }
-
-
 
 const char* get_carnet(void){
     return "CC19089 and MA19074";
