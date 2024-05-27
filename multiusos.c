@@ -157,30 +157,31 @@ void dibujar_multiusos(){
     
     //lineas sobre el relleno del edifico
     glColor3f(0.2,0.5,0.9);
-    EcuacionG(10,572,564,572, 237); // c a d
-    EcuacionG(10,572, 237,217,237);// d a e
-    EcuacionG(10,217,237,217, 564);// e a f
-    EcuacionG(10,217, 564,572,564);//f a c ( cierro el cuadrado)
+    EcuacionG(4,572,564,572, 237); // c a d
+    EcuacionG(4,572, 237,217,237);// d a e
+    EcuacionG(4,217,237,217, 564);// e a f
+    EcuacionG(4,217, 564,572,564);//f a c ( cierro el cuadrado)
     
     
    
-/*
    //SEGUNDA PARTE  LO E ENMEDIO
     glColor3f(1,0,0); // Azul para el relleno del polígono
-    Point vertices1[] = {{200, 237}, {200, 590}, {80, 590}, {80, 237}};
+    Point vertices1[] = {{210, 227}, {210, 590}, {70, 590}, {70, 227}};
     scanLineFill(vertices1, numVertices);
     
     //SEGUNDA PARTE  LO E ENMEDIO LA PARTE SUPERIOR QUE ESTA EN ROJO
     glColor3f(1,0,0); // Azul para el relleno del polígono
-    Point vertices2[] = {{80, 590}, {80, 530}, {0, 530}, {0, 590}};
+    Point vertices2[] = {{70, 590}, {70, 530}, {0, 530}, {0, 590}};
     scanLineFill(vertices2, numVertices);
-*/
     
 /*
     //Ventanas 
     glColor3f(0,0,0);
     Point vertices3[] = {{390,520}, {460,520 }, {460,463 }, {390,463}};
-    scanLineFill(vertices3, numVertices);
+    scanLineFill(vertices3, numVertices)
+ * 
+ * 
+ * 
     
     glColor3f(0,0,0);
     Point vertices4[] = {{390,411}, {460,411 }, {460,360 }, {390,360}};
@@ -212,30 +213,70 @@ void dibujar_multiusos(){
     EcuacionG(10,217,317,470,317);// k a l
     
     glColor3f(0,0,0);
-    Point vertices9[] = {{180,528}, {190,528 }, {190,434 }, {180,434}};
+    Point vertices9[] = {{180,528}, {190,528 }, {190,454 }, {180,454}};
     scanLineFill(vertices9, numVertices);
     
     glColor3f(0,0,0);
-    Point vertices10[] = {{135,528}, {145,528 }, {145,434 }, {135,434}};
+    Point vertices10[] = {{135,528}, {145,528 }, {145,454 }, {135,454}};
     scanLineFill(vertices10, numVertices);
     
     glColor3f(0,0,0);
-    Point vertices11[] = {{90,528}, {100,528 }, {100,434 }, {90,434}};
+    Point vertices11[] = {{90,528}, {100,528 }, {100,454 }, {90,454}};
     scanLineFill(vertices11, numVertices);
     
     
+    
     glColor3f(0,0,0);
-    Point vertices12[] = {{180,420}, {190,420 }, {190,326 }, {180,326}};
+    Point vertices12[] = {{180,420}, {190,420 }, {190,346 }, {180,346}};
     scanLineFill(vertices12, numVertices);
     
     glColor3f(0,0,0);
-    Point vertices13[] = {{135,420}, {145,420 }, {145,326 }, {135,326}};
+    Point vertices13[] = {{135,420}, {145,420 }, {145,346 }, {135,346}};
     scanLineFill(vertices13, numVertices);
     
     glColor3f(0,0,0);
-    Point vertices14[] = {{90,420}, {100,420 }, {100,326 }, {90,326}};
+    Point vertices14[] = {{90,420}, {100,420 }, {100,346 }, {90,346}};
     scanLineFill(vertices14, numVertices);
     
+    
+    
+    
+    glColor3f(0,0,0);
+    Point vertices15[] = {{180,314}, {190,314 }, {190,265 }, {180,265}};
+    scanLineFill(vertices15, numVertices);
+    
+    glColor3f(0,0,0);
+    Point vertices16[] = {{135,314}, {145,314 }, {145,265 }, {135,265}};
+    scanLineFill(vertices16, numVertices);
+    
+    glColor3f(0,0,0);
+    Point vertices17[] = {{90,314}, {100,314 }, {100,265 }, {90,265}};
+    scanLineFill(vertices17, numVertices);
+    
+    
+    
+    //Parte de enmedio
+    //Relleno de la pintura blanca
+    glColor3f(1,1,1);
+    Point vertices21[] = {{0,515}, {55,515 }, {55,232 }, {0,232}};
+    scanLineFill(vertices21, numVertices);
+    
+    
+    //Ventana superior
+    glColor3f(0,0,0);
+    Point vertices18[] = {{0,500}, {40,500 }, {40,450 }, {0,450}};
+    scanLineFill(vertices18, numVertices);
+    
+    
+    //Ventana medio
+    glColor3f(0,0,0);
+    Point vertices19[] = {{0,410}, {40,410 }, {40,340 }, {0,340}};
+    scanLineFill(vertices19, numVertices);
+    
+    //Puerta
+    glColor3f(0,0,0);
+    Point vertices20[] = {{0,300}, {40,300 }, {40,237 }, {0,237}};
+    scanLineFill(vertices20, numVertices);
     
     glFlush();
        
