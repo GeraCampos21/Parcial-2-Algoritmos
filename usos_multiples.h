@@ -4,14 +4,14 @@
  */
 
 /* 
- * File:   multiusos.h
+ * File:   usos_multiples.h
  * Author: gera
  *
- * Created on 24 de mayo de 2024, 09:00
+ * Created on 27 de mayo de 2024, 10:16
  */
 
-#ifndef MULTIUSOS_H
-#define MULTIUSOS_H
+#ifndef USOS_MULTIPLES_H
+#define USOS_MULTIPLES_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -20,22 +20,16 @@ extern "C" {
 * Se encarga de inicializar (si es necesario) su invocacion
 * esta llamada se realizara una sola vez al inicio de la ejecucion
 */
-void inicializar_multiusos(void);
+void inicializar_usos_multiples(void);
 /**
-* Dibuja su entrega de multiusos
+* Dibuja su entrega mediante la invocacion del callback
+de glut tal y como se mostro en clase.
 */
-void dibujar_multiusos();
-
-/**
-* retorne su numero de carnet en la invocacion, en base a esto se asignara su nota de forma automatica
-*/
-const char* get_carnet(void);
-
-
+void dibujar_usos_multiples();
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* MULTIUSOS_H */
+#endif /* USOS_MULTIPLES_H */
 

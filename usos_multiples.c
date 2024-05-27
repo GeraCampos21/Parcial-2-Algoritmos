@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/cFiles/file.c to edit this template
  */
 
-#include "./multiusos.h"
+#include "./usos_multiples.h"
 #include <GL/glut.h>
 #include <GL/glu.h>
 #include <GL/gl.h>
@@ -11,8 +11,8 @@
 #include <math.h>
 #include <stdlib.h>
 
-void inicializar_multiusos(void) {
-    glClearColor(0.6, 0.6, 0.6, 1.0); // gray color
+void inicializar_usos_multiples(void) {
+    glClearColor(0.5, 0.75, 1.0, 1.0); // gray color
     glMatrixMode(GL_PROJECTION);
     gluOrtho2D(-700, 700, -700, 700);; // 700x700
 }
@@ -36,17 +36,9 @@ void setPixel(int x, int y) {
     glFlush();
 }
 
-// Función para dibujar el polígono
-void drawPolygon(Point *vertices, int numVertices) {
-    glBegin(GL_LINE_LOOP);
-    for (int i = 0; i < numVertices; i++) {
-        glVertex2i(vertices[i].x, vertices[i].y);
-    }
-    glEnd();
-    glFlush();
-}
+
 // Función para rellenar el polígono utilizando Scan-Line Fill
-void scanLineFill(Point *vertices, int numVertices) {
+void relleno(Point *vertices, int numVertices) {
     int i, j, k;
     int x, y, temp;
     int minY = vertices[0].y, maxY = vertices[0].y;
@@ -104,7 +96,7 @@ void setPixe2(int x, int y) {
 }
 
 
-void EcuacionG(int size, float x1, float y1, float x2, float y2) {
+void lineas(int size, float x1, float y1, float x2, float y2) {
 
     if (x1 == x2) {
         int startY = (y1 < y2) ? y1 : y2;
@@ -140,10 +132,72 @@ void EcuacionG(int size, float x1, float y1, float x2, float y2) {
         setPixe2(x, y);
     }
     glEnd();
+    
+}
+
+void jardin(float radioX, float radioY, float centerX, float centerY, float LimiteAng) {
+    if (radioX > 0 && radioY > 0) {
+        if (LimiteAng > 360) {
+            exit(EXIT_FAILURE);
+        }
+
+        glBegin(GL_TRIANGLE_FAN);
+        glColor3f(0, 1, 0); // color verde para rellenar la elipse
+        glVertex2f(centerX, centerY); // centro de la elipse
+
+        for (float angle = 0; angle <= LimiteAng; angle++) {
+            float radian = angle * (M_PI / 180); // para pasar a radianes
+
+            float x = centerX + radioX * cos(radian); // coordenada x
+            float y = centerY + radioY * sin(radian); // coordenada y
+
+            glVertex2f(x, y);
+        }
+        glVertex2f(centerX + radioX * cos(0), centerY + radioY * sin(0)); // cierra la elipse
+        glEnd();
+    } else {
+        exit(EXIT_FAILURE);
+    }
+}
+
+void lamparas(float radio, float centerX, float centerY, float LimiteAng)
+{
+    if (radio > 0)
+    {
+        if (LimiteAng > 360)
+        {
+           
+            exit(EXIT_FAILURE);
+        }
+
+        glBegin(GL_TRIANGLE_FAN);
+        glColor3f(1, 1, 1);           // color blanco para rellenar el círculo
+        glVertex2f(centerX, centerY); // centro del círculo
+
+        for (float angle = 0; angle <= LimiteAng; angle++)
+        {
+            float radian = angle * (M_PI / 180); // para pasar a radianes
+
+            float x = centerX + radio * cos(radian); // coordenada x
+            float y = centerY + radio * sin(radian); // coordenada y
+
+           glVertex2i(x,y);
+            
+        }
+
+        glVertex2f(centerX + radio * cos(0), centerY + radio * sin(0)); // cierra el círculo
+        glEnd();
+    }
+    else
+    {
+        
+        exit(EXIT_FAILURE);
+    }
 }
 
 
-void dibujar_multiusos(){
+
+void dibujar_usos_multiples(){
    glClear(GL_COLOR_BUFFER_BIT);
     
    //PRIMERA PARTE DEL DIBUJO ESTO RELLENA Y HACE LAS LINEAS EN ROJO QUE ESTAN ARRIBA DEL RELLENO
@@ -152,136 +206,135 @@ void dibujar_multiusos(){
     glColor3f( 0.55, 0.89, 0.96); // Azul para el relleno del polígono
     //                     c            d           e           f
     Point vertices[] = {{572,564}, {572, 237}, {217,237}, {217, 564}};
-    scanLineFill(vertices, numVertices);
+    relleno(vertices, numVertices);
 */
     
     //lineas sobre el relleno del edifico
     glColor3f(0.2,0.5,0.9);
-    EcuacionG(4,572,564,572, 237); // c a d
-    EcuacionG(4,572, 237,217,237);// d a e
-    EcuacionG(4,217,237,217, 564);// e a f
-    EcuacionG(4,217, 564,572,564);//f a c ( cierro el cuadrado)
+    lineas(4,572,564,572, 237); // c a d
+    lineas(4,572, 237,217,237);// d a e
+    lineas(2,217,237,217, 564);// e a f
+    lineas(4,217, 564,572,564);//f a c ( cierro el cuadrado)
     
     
    
    //SEGUNDA PARTE  LO E ENMEDIO
     glColor3f(1,0,0); // Azul para el relleno del polígono
     Point vertices1[] = {{210, 227}, {210, 590}, {70, 590}, {70, 227}};
-    scanLineFill(vertices1, numVertices);
+    relleno(vertices1, numVertices);
     
     //SEGUNDA PARTE  LO E ENMEDIO LA PARTE SUPERIOR QUE ESTA EN ROJO
     glColor3f(1,0,0); // Azul para el relleno del polígono
     Point vertices2[] = {{70, 590}, {70, 530}, {0, 530}, {0, 590}};
-    scanLineFill(vertices2, numVertices);
+    relleno(vertices2, numVertices);
     
-/*
-    //Ventanas 
+        //Ventanas 
     glColor3f(0,0,0);
     Point vertices3[] = {{390,520}, {460,520 }, {460,463 }, {390,463}};
-    scanLineFill(vertices3, numVertices)
- * 
- * 
- * 
+    relleno(vertices3, numVertices);
     
     glColor3f(0,0,0);
     Point vertices4[] = {{390,411}, {460,411 }, {460,360 }, {390,360}};
-    scanLineFill(vertices4, numVertices);
+    relleno(vertices4, numVertices);
     
     glColor3f(0,0,0);
     Point vertices5[] = {{390,310}, {460,310 }, {460,255 }, {390,255}};
-    scanLineFill(vertices5, numVertices);
+    relleno(vertices5, numVertices);
     
     glColor3f(0,0,0);
-    Point vertices6[] = {{366,520}, {217,520 }, {217,463 }, {366,463}};
-    scanLineFill(vertices6, numVertices);
+    Point vertices6[] = {{366,520}, {226,520 }, {226,463 }, {366,463}};
+    relleno(vertices6, numVertices);
     
     glColor3f(0,0,0);
-    Point vertices7[] = {{217,411}, {366,411 }, {366,360 }, {217,360}};
-    scanLineFill(vertices7, numVertices);
+    Point vertices7[] = {{226,411}, {366,411 }, {366,360 }, {226,360}};
+    relleno(vertices7, numVertices);
     
     glColor3f(0,0,0);
-    Point vertices8[] = {{217,310}, {366,310 }, {366,255 }, {217,255}};
-    scanLineFill(vertices8, numVertices);
-*/
+    Point vertices8[] = {{226,310}, {366,310 }, {366,255 }, {226,255}};
+    relleno(vertices8, numVertices);
     
-    
+   
     
     //lineas primera ventana
     glColor3f(1,0,0);
-    EcuacionG(10,380,520,380,237);// g a h
-    EcuacionG(10,217,422,470,422);// i a j
-    EcuacionG(10,217,317,470,317);// k a l
+    lineas(13,380,520,380,251);// g a h
+    lineas(10,217,422,470,422);// i a j
+    lineas(10,217,317,470,317);// k a l
     
     glColor3f(0,0,0);
     Point vertices9[] = {{180,528}, {190,528 }, {190,454 }, {180,454}};
-    scanLineFill(vertices9, numVertices);
+    relleno(vertices9, numVertices);
     
     glColor3f(0,0,0);
     Point vertices10[] = {{135,528}, {145,528 }, {145,454 }, {135,454}};
-    scanLineFill(vertices10, numVertices);
+    relleno(vertices10, numVertices);
     
     glColor3f(0,0,0);
     Point vertices11[] = {{90,528}, {100,528 }, {100,454 }, {90,454}};
-    scanLineFill(vertices11, numVertices);
+    relleno(vertices11, numVertices);
     
     
     
     glColor3f(0,0,0);
     Point vertices12[] = {{180,420}, {190,420 }, {190,346 }, {180,346}};
-    scanLineFill(vertices12, numVertices);
+    relleno(vertices12, numVertices);
     
     glColor3f(0,0,0);
     Point vertices13[] = {{135,420}, {145,420 }, {145,346 }, {135,346}};
-    scanLineFill(vertices13, numVertices);
+    relleno(vertices13, numVertices);
     
     glColor3f(0,0,0);
     Point vertices14[] = {{90,420}, {100,420 }, {100,346 }, {90,346}};
-    scanLineFill(vertices14, numVertices);
-    
+    relleno(vertices14, numVertices);
     
     
     
     glColor3f(0,0,0);
     Point vertices15[] = {{180,314}, {190,314 }, {190,265 }, {180,265}};
-    scanLineFill(vertices15, numVertices);
+    relleno(vertices15, numVertices);
     
     glColor3f(0,0,0);
     Point vertices16[] = {{135,314}, {145,314 }, {145,265 }, {135,265}};
-    scanLineFill(vertices16, numVertices);
+    relleno(vertices16, numVertices);
     
     glColor3f(0,0,0);
     Point vertices17[] = {{90,314}, {100,314 }, {100,265 }, {90,265}};
-    scanLineFill(vertices17, numVertices);
+    relleno(vertices17, numVertices);
     
     
+    //dibujar las lamparas
+    glColor3f(1, 1, 0);
+    lamparas(10,380,420,360);
+    lamparas(10,-380,420,360);
     
     //Parte de enmedio
     //Relleno de la pintura blanca
     glColor3f(1,1,1);
     Point vertices21[] = {{0,515}, {55,515 }, {55,232 }, {0,232}};
-    scanLineFill(vertices21, numVertices);
+    relleno(vertices21, numVertices);
     
     
     //Ventana superior
     glColor3f(0,0,0);
     Point vertices18[] = {{0,500}, {40,500 }, {40,450 }, {0,450}};
-    scanLineFill(vertices18, numVertices);
+    relleno(vertices18, numVertices);
     
     
     //Ventana medio
     glColor3f(0,0,0);
     Point vertices19[] = {{0,410}, {40,410 }, {40,340 }, {0,340}};
-    scanLineFill(vertices19, numVertices);
+    relleno(vertices19, numVertices);
     
     //Puerta
     glColor3f(0,0,0);
     Point vertices20[] = {{0,300}, {40,300 }, {40,237 }, {0,237}};
-    scanLineFill(vertices20, numVertices);
+    relleno(vertices20, numVertices);
+    
+    //para hacer lo que es el jardin en verde
+    jardin(350.0,45.0,0,190.0,360.0);
+    
+    
     
     glFlush();
        
-}
-
-const char* get_carnet(void){
-    return "CC19089 and MA19074";
 }

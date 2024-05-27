@@ -36,7 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/multiusos.o
+	${OBJECTDIR}/usos_multiples.o
 
 
 # C Compiler Flags
@@ -68,10 +68,10 @@ ${OBJECTDIR}/main.o: main.c
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
 
-${OBJECTDIR}/multiusos.o: multiusos.c
+${OBJECTDIR}/usos_multiples.o: usos_multiples.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/multiusos.o multiusos.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/usos_multiples.o usos_multiples.c
 
 # Subprojects
 .build-subprojects:
