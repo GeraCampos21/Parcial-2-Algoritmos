@@ -176,6 +176,7 @@ void dibujar_multiusos(){
     scanLineFill(vertices2, numVertices);
 */
     
+/*
     //Ventanas 
     glColor3f(0,0,0);
     Point vertices3[] = {{390,520}, {460,520 }, {460,463 }, {390,463}};
@@ -200,6 +201,7 @@ void dibujar_multiusos(){
     glColor3f(0,0,0);
     Point vertices8[] = {{217,310}, {366,310 }, {366,255 }, {217,255}};
     scanLineFill(vertices8, numVertices);
+*/
     
     
     
@@ -209,9 +211,30 @@ void dibujar_multiusos(){
     EcuacionG(10,217,422,470,422);// i a j
     EcuacionG(10,217,317,470,317);// k a l
     
+    glColor3f(0,0,0);
+    Point vertices9[] = {{180,528}, {190,528 }, {190,434 }, {180,434}};
+    scanLineFill(vertices9, numVertices);
+    
+    glColor3f(0,0,0);
+    Point vertices10[] = {{135,528}, {145,528 }, {145,434 }, {135,434}};
+    scanLineFill(vertices10, numVertices);
+    
+    glColor3f(0,0,0);
+    Point vertices11[] = {{90,528}, {100,528 }, {100,434 }, {90,434}};
+    scanLineFill(vertices11, numVertices);
     
     
+    glColor3f(0,0,0);
+    Point vertices12[] = {{180,420}, {190,420 }, {190,326 }, {180,326}};
+    scanLineFill(vertices12, numVertices);
     
+    glColor3f(0,0,0);
+    Point vertices13[] = {{135,420}, {145,420 }, {145,326 }, {135,326}};
+    scanLineFill(vertices13, numVertices);
+    
+    glColor3f(0,0,0);
+    Point vertices14[] = {{90,420}, {100,420 }, {100,326 }, {90,326}};
+    scanLineFill(vertices14, numVertices);
     
     
     glFlush();
