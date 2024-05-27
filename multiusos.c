@@ -14,7 +14,7 @@
 void inicializar_multiusos(void) {
     glClearColor(0.6, 0.6, 0.6, 1.0); // gray color
     glMatrixMode(GL_PROJECTION);
-    gluOrtho2D(-500, 700, 0, 700);; // 700x700
+    gluOrtho2D(-700, 700, -700, 700);; // 700x700
 }
 
 // Estructura para almacenar puntos
@@ -148,36 +148,66 @@ void dibujar_multiusos(){
     
    //PRIMERA PARTE DEL DIBUJO ESTO RELLENA Y HACE LAS LINEAS EN ROJO QUE ESTAN ARRIBA DEL RELLENO
    //relleno del edificio
+/*
     glColor3f( 0.55, 0.89, 0.96); // Azul para el relleno del polígono
-    Point vertices[] = {{135, 545}, {135, 340}, {390, 340}, {390, 545}};
+    //                     c            d           e           f
+    Point vertices[] = {{572,564}, {572, 237}, {217,237}, {217, 564}};
     scanLineFill(vertices, numVertices);
+*/
     
     //lineas sobre el relleno del edifico
     glColor3f(0.2,0.5,0.9);
-    EcuacionG(10,135,546,391,546);
-    EcuacionG(10,391,546,391,340);
-    EcuacionG(10,391,340,137,340);
+    EcuacionG(10,572,564,572, 237); // c a d
+    EcuacionG(10,572, 237,217,237);// d a e
+    EcuacionG(10,217,237,217, 564);// e a f
+    EcuacionG(10,217, 564,572,564);//f a c ( cierro el cuadrado)
     
-    //lineas primera ventana
-    glColor3f(1,0,0);
-    EcuacionG(15,240,505,240,353);
-    EcuacionG(10,145,455,310,455);
-    EcuacionG(10,145,390,310,390);
+    
    
+/*
    //SEGUNDA PARTE  LO E ENMEDIO
     glColor3f(1,0,0); // Azul para el relleno del polígono
-    Point vertices1[] = {{50, 560}, {50, 340}, {132, 340}, {132, 560}};
+    Point vertices1[] = {{200, 237}, {200, 590}, {80, 590}, {80, 237}};
     scanLineFill(vertices1, numVertices);
     
     //SEGUNDA PARTE  LO E ENMEDIO LA PARTE SUPERIOR QUE ESTA EN ROJO
     glColor3f(1,0,0); // Azul para el relleno del polígono
-    Point vertices2[] = {{0, 560}, {0, 528}, {50, 528}, {50, 560}};
+    Point vertices2[] = {{80, 590}, {80, 530}, {0, 530}, {0, 590}};
     scanLineFill(vertices2, numVertices);
+*/
+    
+    //Ventanas 
+    glColor3f(0,0,0);
+    Point vertices3[] = {{390,520}, {460,520 }, {460,463 }, {390,463}};
+    scanLineFill(vertices3, numVertices);
+    
+    glColor3f(0,0,0);
+    Point vertices4[] = {{390,411}, {460,411 }, {460,360 }, {390,360}};
+    scanLineFill(vertices4, numVertices);
+    
+    glColor3f(0,0,0);
+    Point vertices5[] = {{390,310}, {460,310 }, {460,255 }, {390,255}};
+    scanLineFill(vertices5, numVertices);
+    
+    glColor3f(0,0,0);
+    Point vertices6[] = {{366,520}, {217,520 }, {217,463 }, {366,463}};
+    scanLineFill(vertices6, numVertices);
+    
+    glColor3f(0,0,0);
+    Point vertices7[] = {{217,411}, {366,411 }, {366,360 }, {217,360}};
+    scanLineFill(vertices7, numVertices);
+    
+    glColor3f(0,0,0);
+    Point vertices8[] = {{217,310}, {366,310 }, {366,255 }, {217,255}};
+    scanLineFill(vertices8, numVertices);
     
     
     
-    
-    
+    //lineas primera ventana
+    glColor3f(1,0,0);
+    EcuacionG(10,380,520,380,237);// g a h
+    EcuacionG(10,217,422,470,422);// i a j
+    EcuacionG(10,217,317,470,317);// k a l
     
     
     
