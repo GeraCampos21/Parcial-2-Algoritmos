@@ -202,12 +202,10 @@ void dibujar_usos_multiples(){
     
    //PRIMERA PARTE DEL DIBUJO ESTO RELLENA Y HACE LAS LINEAS EN ROJO QUE ESTAN ARRIBA DEL RELLENO
    //relleno del edificio
-/*
     glColor3f( 0.55, 0.89, 0.96); // Azul para el relleno del polígono
     //                     c            d           e           f
     Point vertices[] = {{572,564}, {572, 237}, {217,237}, {217, 564}};
     relleno(vertices, numVertices);
-*/
     
     //lineas sobre el relleno del edifico
     glColor3f(0.2,0.5,0.9);
@@ -228,30 +226,62 @@ void dibujar_usos_multiples(){
     Point vertices2[] = {{70, 590}, {70, 530}, {0, 530}, {0, 590}};
     relleno(vertices2, numVertices);
     
-        //Ventanas 
-    glColor3f(0,0,0);
+    //Ventanas 
+    
+    //Ventanas de lo mas derecho ( mas cortas)
+    
+    //Arriba
+    glColor3f(0.62745,0.2509,0);
     Point vertices3[] = {{390,520}, {460,520 }, {460,463 }, {390,463}};
     relleno(vertices3, numVertices);
-    
     glColor3f(0,0,0);
+    lineas(4,410,520,410,463);
+    lineas(4,440,520,440,463);
+    
+    //Medio
+    glColor3f(0.62745,0.2509,0);
     Point vertices4[] = {{390,411}, {460,411 }, {460,360 }, {390,360}};
     relleno(vertices4, numVertices);
-    
     glColor3f(0,0,0);
+    lineas(4,410,406,410,360);
+    lineas(4,440,406,440,360);
+    
+    //Abajo
+    glColor3f(0.62745,0.2509,0);
     Point vertices5[] = {{390,310}, {460,310 }, {460,255 }, {390,255}};
     relleno(vertices5, numVertices);
-    
     glColor3f(0,0,0);
+    lineas(4,410,310,410,255);
+    lineas(4,440,310,440,255);
+    
+    
+    //Ventanas pegadas al pilar rojo ( las mas anchas y largas)
+    //Arriba
+    glColor3f(0.62745,0.2509,0);
     Point vertices6[] = {{366,520}, {226,520 }, {226,463 }, {366,463}};
     relleno(vertices6, numVertices);
-    
     glColor3f(0,0,0);
+    lineas(4,261,520,261,463);
+    lineas(4,296,520,296,463);
+    lineas(4,331,520,331,463);
+    
+    //Medio
+    glColor3f(0.62745,0.2509,0);
     Point vertices7[] = {{226,411}, {366,411 }, {366,360 }, {226,360}};
     relleno(vertices7, numVertices);
-    
     glColor3f(0,0,0);
+    lineas(4,261,406,261,360);
+    lineas(4,296,406,296,360);
+    lineas(4,331,406,331,360);
+    
+    //Abajo
+    glColor3f(0.62745,0.2509,0);
     Point vertices8[] = {{226,310}, {366,310 }, {366,255 }, {226,255}};
     relleno(vertices8, numVertices);
+    glColor3f(0,0,0);
+    lineas(4,261,310,261,255);
+    lineas(4,296,310,296,255);
+    lineas(4,331,310,331,255);
     
    
     
@@ -261,43 +291,46 @@ void dibujar_usos_multiples(){
     lineas(10,217,422,470,422);// i a j
     lineas(10,217,317,470,317);// k a l
     
-    glColor3f(0,0,0);
+    
+    
+    //Ventanas de enmedio
+    glColor3f(0.62745,0.2509,0);
     Point vertices9[] = {{180,528}, {190,528 }, {190,454 }, {180,454}};
     relleno(vertices9, numVertices);
     
-    glColor3f(0,0,0);
+    glColor3f(0.62745,0.2509,0);
     Point vertices10[] = {{135,528}, {145,528 }, {145,454 }, {135,454}};
     relleno(vertices10, numVertices);
     
-    glColor3f(0,0,0);
+    glColor3f(0.62745,0.2509,0);
     Point vertices11[] = {{90,528}, {100,528 }, {100,454 }, {90,454}};
     relleno(vertices11, numVertices);
     
     
     
-    glColor3f(0,0,0);
+    glColor3f(0.62745,0.2509,0);
     Point vertices12[] = {{180,420}, {190,420 }, {190,346 }, {180,346}};
     relleno(vertices12, numVertices);
     
-    glColor3f(0,0,0);
+    glColor3f(0.62745,0.2509,0);
     Point vertices13[] = {{135,420}, {145,420 }, {145,346 }, {135,346}};
     relleno(vertices13, numVertices);
     
-    glColor3f(0,0,0);
+    glColor3f(0.62745,0.2509,0);
     Point vertices14[] = {{90,420}, {100,420 }, {100,346 }, {90,346}};
     relleno(vertices14, numVertices);
     
     
     
-    glColor3f(0,0,0);
+    glColor3f(0.62745,0.2509,0);
     Point vertices15[] = {{180,314}, {190,314 }, {190,265 }, {180,265}};
     relleno(vertices15, numVertices);
     
-    glColor3f(0,0,0);
+    glColor3f(0.62745,0.2509,0);
     Point vertices16[] = {{135,314}, {145,314 }, {145,265 }, {135,265}};
     relleno(vertices16, numVertices);
     
-    glColor3f(0,0,0);
+    glColor3f(0.62745,0.2509,0);
     Point vertices17[] = {{90,314}, {100,314 }, {100,265 }, {90,265}};
     relleno(vertices17, numVertices);
     
@@ -315,23 +348,34 @@ void dibujar_usos_multiples(){
     
     
     //Ventana superior
-    glColor3f(0,0,0);
+    glColor3f(0.62745,0.2509,0);
     Point vertices18[] = {{0,500}, {40,500 }, {40,450 }, {0,450}};
     relleno(vertices18, numVertices);
+    glColor3f(0,0,0);
+    lineas(2,0,505,0,443);
+    lineas(2,20,505,20,443);
+    lineas(2,0,474,47,474);
     
     
     //Ventana medio
-    glColor3f(0,0,0);
+    glColor3f(0.62745,0.2509,0);
     Point vertices19[] = {{0,410}, {40,410 }, {40,340 }, {0,340}};
     relleno(vertices19, numVertices);
+    glColor3f(0,0,0);
+    lineas(2,0,410,0,340);
+    lineas(2,20,410,20,340);
+    lineas(2,0,375,40,375);
     
     //Puerta
-    glColor3f(0,0,0);
+    glColor3f(0.62745,0.2509,0);
     Point vertices20[] = {{0,300}, {40,300 }, {40,237 }, {0,237}};
     relleno(vertices20, numVertices);
+    glColor3f(0,0,0);
+    lineas(2,0,300,0,237); //linea divisoria
+    lineas(2,0,280,40,280);
     
     //para hacer lo que es el jardin en verde
-    jardin(350.0,45.0,0,190.0,360.0);
+    jardin(350.0,45.0,0,180.0,360.0);
     
     
     
